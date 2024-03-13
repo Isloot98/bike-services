@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { View, Text, Button, Alert } from "react-native";
+import { View, Text, Button, Alert, Image } from "react-native";
 import { Picker } from "@react-native-picker/picker";
+import { useWindowDimensions } from "react-native";
 
 const BikeOrderForm = () => {
   const [colors, setColors] = useState([]);
@@ -11,6 +12,7 @@ const BikeOrderForm = () => {
   const [selectedComponentType, setSelectedComponentType] = useState(null);
   const [selectedCycleType, setSelectedCycleType] = useState(null);
   const [selectedPropulsionType, setSelectedPropulsionType] = useState(null);
+  const { height, width } = useWindowDimensions();
 
   useEffect(() => {
     fetchData();
@@ -114,6 +116,15 @@ const BikeOrderForm = () => {
       </Picker>
 
       <Button title="Submit" onPress={handleSubmit} />
+      <View>
+        <Image
+          source={{
+            uri: "https://www.yellowjersey.co.uk/wp-content/uploads/2020/01/C20_SuperSixEVO-Neo_Beauty_3282-e1578502655627.jpg",
+          }}
+          style={{ width: "100%", height: "66%" }}
+          resizeMode="cover"
+        />
+      </View>
     </View>
   );
 };
