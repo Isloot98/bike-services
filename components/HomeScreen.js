@@ -12,7 +12,7 @@ const HomeScreen = () => {
       style={styles.container}
     >
       <View>
-        <Text>New React Native App, exciting!</Text>
+        <Text>New React Native App!</Text>
       </View>
       <StatusBar style="auto" />
     </LinearGradient>
