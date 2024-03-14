@@ -115,13 +115,13 @@ const BikeOrderForm = () => {
         ))}
       </Picker>
 
-      <Button title="Submit" onPress={handleSubmit} />
+      <Button title="Submit" onPress={handleSubmit} color="#33b249" />
       <View>
         <Image
           source={{
             uri: "https://www.yellowjersey.co.uk/wp-content/uploads/2020/01/C20_SuperSixEVO-Neo_Beauty_3282-e1578502655627.jpg",
           }}
-          style={{ width: "100%", height: "66%" }}
+          style={{ width: "100%", height: "65.7%" }}
           resizeMode="cover"
         />
       </View>
