@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Image, Button, View, StyleSheet, Text, Alert } from "react-native";
 import { Calendar, CalendarList } from "react-native-calendars";
 import { useWindowDimensions } from "react-native";
+import { LinearGradient } from "expo-linear-gradient";
 
 const BookAService = () => {
   const [selected, setSelected] = useState("");
@@ -42,6 +43,7 @@ const BookAService = () => {
   return (
     <View>
       <Calendar
+        style={styles.calendar}
         onDayPress={(day) => {
           setSelected(day.dateString);
         }}
@@ -53,13 +55,18 @@ const BookAService = () => {
           },
         }}
       />
-      <Button title="Book Service" onPress={bookService} />
+      <Button
+        title="Book Service"
+        onPress={bookService}
+        style={styles.button}
+        color="#33b249"
+      />
       <View>
         <Image
           source={{
             uri: "https://hammer-sport.co.uk/wp-content/uploads/2023/01/Cristal-green-scaled-1.jpg",
           }}
-          style={{ width: "100%", height: "58%" }}
+          style={{ width: "100%", height: 260 }}
           resizeMode="cover"
         />
       </View>
@@ -68,3 +75,9 @@ const BookAService = () => {
 };
 
 export default BookAService;
+const styles = StyleSheet.create({
+  calendar: {
+    backgroundColor: "#5dbea3",
+    color: "white",
+  },
+});
